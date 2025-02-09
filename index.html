@@ -48,6 +48,14 @@ h2{
   width: 20vh;
 }
 
+.hover-btn2{
+  top: 65%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 20vh;
+}
+
 
 </style>
 </head>
@@ -55,6 +63,7 @@ h2{
 
 <div class="container">
   <button class="hover-btn">Yes</button>
+  <button class="hover-btn2">No</button>
   <h2>Would you be my valentine?</h2>
   <div class="pictures"></div>
   <script> 
@@ -63,6 +72,13 @@ h2{
     });
     
     document.querySelector(".hover-btn").addEventListener("mouseleave", function() {
+        document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/CatRoseeeeeeee.jpg')";
+    });
+    document.querySelector(".hover-btn2").addEventListener("mouseenter", function() {
+        document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/SadHamster.gif')";
+    });
+
+    document.querySelector(".hover-btn2").addEventListener("mouseleave", function() {
         document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/CatRoseeeeeeee.jpg')";
     });
     </script>
