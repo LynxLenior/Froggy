@@ -22,7 +22,7 @@
                 colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00'] // Custom colors
             });
         };
-        if (performance.navigation.type === 1) {
+        if (performance.getEntriesByType("navigation")[0].type === "reload") {
         window.location.href = "index.html";
     }
     </script>
