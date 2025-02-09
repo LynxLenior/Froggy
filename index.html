@@ -57,7 +57,15 @@ h2{
   <button class="hover-btn">Yes</button>
   <h2>Would you be my valentine?</h2>
   <div class="pictures"></div>
-     
+  <script> 
+    document.querySelector(".hover-btn").addEventListener("mouseenter", function() {
+        document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/Yipee.gif')";
+    });
+    
+    document.querySelector(".hover-btn").addEventListener("mouseleave", function() {
+        document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/CatRoseeeeeeee.jpg')";
+    });
+    </script>
 </div>
 
 </body>
