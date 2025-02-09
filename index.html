@@ -176,6 +176,13 @@ h2 {
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script>
+
+document.querySelector(".hover-btn").addEventListener("click", function() {
+        window.location.href = "Pages/YesPage.html";
+});
+    document.querySelector(".hover-btn2").addEventListener("click", function() {
+        window.location.href = "Pages/NoPage.html";
+});
 document.querySelector(".hover-btn").addEventListener("mouseenter", function() {
     document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/Yipee.gif')";
 });
