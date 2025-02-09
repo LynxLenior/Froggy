@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body style="background-color: green; display: flex; align-items: center; justify-content: center; height: 100vh;">
+
+    <h1 style="color: white;">Yay! You said Yes! 🎉</h1>
+
+    <script>
+        // Trigger confetti when the page loads
+        window.onload = function() {
+            confetti({
+                particleCount: 200,   // Number of confetti particles
+                spread: 100,           // Spread of the explosion
+                origin: { y: 0.6 },   // Confetti starts lower on the screen
+                startVelocity: 50,    // Initial speed
+                gravity: 0.4,         // Simulates mass (lower = lighter confetti)
+                scalar: 1.8,          // Size of confetti
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00'] // Custom colors
+            });
+        };
+    </script>
+
+</body>
+</html>
