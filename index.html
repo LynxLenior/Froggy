@@ -90,6 +90,17 @@ h2{
     document.querySelector(".hover-btn2").addEventListener("click", function() {
         window.location.href = "Pages/NoPage.html";
     });
+
+
+    document.querySelector(".hover-btn").addEventListener("click", function () {
+        sessionStorage.setItem("visitedFromIndex", "true");
+        window.location.href = "YesPage.html";
+    });
+
+    document.querySelector(".hover-btn2").addEventListener("click", function () {
+        sessionStorage.setItem("visitedFromIndex", "true");
+        window.location.href = "NoPage.html";
+    });
     </script>
 </div>
 
