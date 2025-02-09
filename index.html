@@ -67,6 +67,14 @@ h2{
   <h2>Would you be my valentine?</h2>
   <div class="pictures"></div>
   <script> 
+    document.querySelector(".hover-btn").addEventListener("click", function () {
+        sessionStorage.setItem("visitedFromIndex", "true");
+        window.location.href = "Pages/YesPage.html";
+    });
+
+    document.querySelector(".hover-btn2").addEventListener("click", function () {
+        sessionStorage.setItem("visitedFromIndex", "true");
+        window.location.href = "NoPage.html";
     document.querySelector(".hover-btn").addEventListener("mouseenter", function() {
         document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/Yipee.gif')";
     });
@@ -82,24 +90,6 @@ h2{
         document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/CatRoseeeeeeee.jpg')";
     });
 
-    
-    document.querySelector(".hover-btn").addEventListener("click", function() {
-        window.location.href = "Pages/YesPage.html";
-    });
-
-    document.querySelector(".hover-btn2").addEventListener("click", function() {
-        window.location.href = "Pages/NoPage.html";
-    });
-
-
-    document.querySelector(".hover-btn").addEventListener("click", function () {
-        sessionStorage.setItem("visitedFromIndex", "true");
-        window.location.href = "YesPage.html";
-    });
-
-    document.querySelector(".hover-btn2").addEventListener("click", function () {
-        sessionStorage.setItem("visitedFromIndex", "true");
-        window.location.href = "NoPage.html";
     });
     </script>
 </div>
