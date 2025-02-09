@@ -22,8 +22,10 @@
                 colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00'] // Custom colors
             });
         };
-        if (performance.getEntriesByType("navigation")[0].type === "reload") {
+    if (sessionStorage.getItem("visited")) {
         window.location.href = "index.html";
+    } else {
+        sessionStorage.setItem("visited", "true");
     }
     </script>
 
