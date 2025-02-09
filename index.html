@@ -10,6 +10,7 @@ body{
   justify-content: center;
   height: 100vh;
   color:white;
+  background-attachment: fixed;
 }
 
 .container{
@@ -19,11 +20,45 @@ body{
   background-repeat: 12px;
   display: flex;
 }
+
+h2{
+    left: 50%;
+    top: 55%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.pictures {
+    height: 40%;
+    width: 25%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/CatRoseeeeeeee.jpg");
+    top: 35%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: background-image 0.3s ease-in-out;
+}
+.hover-btn{
+  top: 65%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 20vh;
+}
+
+
 </style>
 </head>
 <body>
 
-<div class="container"></div>
+<div class="container">
+  <button class="hover-btn">Yes</button>
+  <h2>Would you be my valentine?</h2>
+  <div class="pictures"></div>
+     
+</div>
 
 </body>
-</html> 
+</html>
