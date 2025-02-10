@@ -201,10 +201,11 @@ envelope.addEventListener('click', () => {
         window.onload = function() {
             if (sessionStorage.getItem('redirected') === 'true') {
         sessionStorage.removeItem('redirected'); // Remove flag to prevent replay on refresh
-        const audio = new Audio("../Images/Yippee.mp3"); // Adjust path if needed
-        audio.play().catch(error => {
-            console.log("Autoplay blocked. Sound will play on user interaction.");
-            document.body.addEventListener("click", () => audio.play(), { once: true });
+        const yippeeSound = document.getElementById("yippeeSound");
+
+        yippeeSound.play().catch(error => {
+            console.log("🔇 Autoplay blocked. Sound will play on user interaction.");
+            document.body.addEventListener("click", () => yippeeSound.play(), { once: true });
         });
     }
 

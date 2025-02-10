@@ -165,7 +165,7 @@ h2 {
 </style>
 </head>
 <body>
-  <audio id="bgMusic" src="https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/Valentine.mp3" loop></audio>
+  <audio id="bgMusic" src="./Image/Valentine.mp3" loop></audio>
 
 <div class="falling-leaves"></div>
 
@@ -177,6 +177,15 @@ h2 {
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const bgMusic = document.getElementById("bgMusic");
+    bgMusic.volume = 0.5; // Set volume to 50%
+    bgMusic.play().catch(error => {
+        console.log("🔇 Autoplay blocked. Waiting for user interaction...");
+        document.body.addEventListener("click", () => bgMusic.play(), { once: true });
+    });
+});
 
 document.querySelector(".hover-btn").addEventListener("click", function() {
         window.location.href = "Pages/YesPage.html";
@@ -237,22 +246,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const bgMusic = document.getElementById("bgMusic");
-    bgMusic.volume = 0.5; // Set volume to 50%
-
-    // Check if the audio file loads
-    bgMusic.oncanplaythrough = () => console.log("Audio file loaded successfully!");
-
-    // Try playing immediately
-    bgMusic.play().catch(error => {
-        console.log("Autoplay blocked. Waiting for user interaction...");
-        document.body.addEventListener("click", function () {
-            bgMusic.play();
-        }, { once: true });
-    });
-});
 </script>
 </div>
 
