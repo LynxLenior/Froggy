@@ -21,6 +21,7 @@ body{
   align-items: center;
   justify-content: center;
 }
+
 .container {
   height: 100vh;
   display: grid;
@@ -129,6 +130,7 @@ body{
     <title>CSS Envelope + Letter (Open/Close on Click)</title>
 </head>
 <body>
+    <audio id="yippeeSound" src="../Images/Yippee.mp3"></audio>
 <!--<body style="background-color: green; display: flex; align-items: center; justify-content: center; height: 100vh;"> -->
     <div class="container">
         <div class="envelope-wrapper">
@@ -137,9 +139,11 @@ body{
                     <div class="text">
                         <strong>Dear Frog,</strong>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Numquam labore omnis minus maiores laboriosam, facere in beatae esse. 
+                            I just wanna say that I appreciate you so much and I have never been so glad to be alive until I met you. 
                         </p>
+                        <p>
+                          I hope that you understand how important of a person you are to me, no matter what happens, you'll always be a special person for me.
+                        </P>
                     </div>
                 </div>
             </div>
@@ -147,8 +151,15 @@ body{
         </div>
     </div>
     <script>
-              const envelope = document.querySelector('.envelope-wrapper');
-const letter = document.querySelector('.letter');
+            const envelope = document.querySelector('.envelope-wrapper');
+            const letter = document.querySelector('.letter');
+            const audio = document.getElementById("yippeeSound");
+
+            if (sessionStorage.getItem('redirected') === 'true') {
+            audio.play().catch(error => {
+                console.log("Autoplay blocked. Sound will play on user interaction.");
+            })};
+
 
 envelope.addEventListener('click', () => {
     envelope.classList.toggle('flap');
@@ -184,7 +195,5 @@ envelope.addEventListener('click', () => {
         window.location.href = "../index.html"; // Adjust path if needed
     }
 </script>
-    </script>
-
 </body>
 </html>
