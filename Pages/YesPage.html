@@ -132,6 +132,7 @@ body{
     <title>CSS Envelope + Letter (Open/Close on Click)</title>
 </head>
 <body>
+    <audio id="bgMusic" src="../Image/Blue.mp3" loop></audio>
     <audio id="yippeeSound" src="../Image/Yippee.mp3"></audio>
 <!--<body style="background-color: green; display: flex; align-items: center; justify-content: center; height: 100vh;"> -->
     <div class="container">
@@ -146,6 +147,9 @@ body{
                         <p>
                           I hope that you understand how important of a person you are to me, no matter what happens, you'll always be a special person for me.
                         </P>
+                        <p>
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -153,6 +157,8 @@ body{
         </div>
     </div>
     <script>
+        const audio = document.getElementById("bgMusic");
+            audio.volume = 0.5;
             const envelope = document.querySelector('.envelope-wrapper');
             const letter = document.querySelector('.letter');
             const audio = document.getElementById("yippeeSound");
