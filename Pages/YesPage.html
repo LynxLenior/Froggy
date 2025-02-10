@@ -157,12 +157,22 @@ body{
         </div>
     </div>
     <script>
-        const audio = document.getElementById("bgMusic");
+        const bgMusic = document.getElementById("bgMusic");
             audio.volume = 0.5;
             const envelope = document.querySelector('.envelope-wrapper');
             const letter = document.querySelector('.letter');
-            const audio = document.getElementById("yippeeSound");
+            const yippeeSound = document.getElementById("yippeeSound");
 
+             // Play audio on user interaction if autoplay is blocked
+    document.body.addEventListener("click", function () {
+        if (bgMusic.paused) {
+            bgMusic.play().catch(error => console.log("Autoplay blocked"));
+        }
+    }, { once: true });
+
+    // Try to play immediately (some browsers allow it)
+    bgMusic.play().catch(error => console.log("Autoplay blocked"));
+            
             if (sessionStorage.getItem('redirected') === 'true') {
             audio.play().catch(error => {
                 console.log("Autoplay blocked. Sound will play on user interaction.");
