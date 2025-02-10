@@ -163,20 +163,21 @@ body{
             const letter = document.querySelector('.letter');
             const yippeeSound = document.getElementById("yippeeSound");
 
-             // Play audio on user interaction if autoplay is blocked
-    document.body.addEventListener("click", function () {
-        if (bgMusic.paused) {
-            bgMusic.play().catch(error => console.log("Autoplay blocked"));
-        }
-    }, { once: true });
+    document.addEventListener("DOMContentLoaded", function () {
+    const bgMusic = document.getElementById("bgMusic");
+    bgMusic.volume = 0.5; // Set volume to 50%
 
-    // Try to play immediately (some browsers allow it)
-    bgMusic.play().catch(error => console.log("Autoplay blocked"));
-            
-            if (sessionStorage.getItem('redirected') === 'true') {
-            audio.play().catch(error => {
-                console.log("Autoplay blocked. Sound will play on user interaction.");
-            })};
+    // Check if the audio file loads
+    bgMusic.oncanplaythrough = () => console.log("Audio file loaded successfully!");
+
+    // Try playing immediately
+    bgMusic.play().catch(error => {
+        console.log("Autoplay blocked. Waiting for user interaction...");
+        document.body.addEventListener("click", function () {
+            bgMusic.play();
+        }, { once: true });
+    });
+});
 
 
 envelope.addEventListener('click', () => {
