@@ -184,13 +184,14 @@ envelope.addEventListener('click', () => {
         // Trigger confetti when the page loads
         window.onload = function() {
             if (sessionStorage.getItem('redirected') === 'true') {
-        document.addEventListener('click', function playSound() {
-            audio.play().catch(error => {
-                console.log("Autoplay blocked. Sound will play on user interaction.");
-            });
-            document.removeEventListener('click', playSound);
+        sessionStorage.removeItem('redirected'); // Remove flag to prevent replay on refresh
+        const audio = new Audio("../Images/Yippee.mp3"); // Adjust path if needed
+        audio.play().catch(error => {
+            console.log("Autoplay blocked. Sound will play on user interaction.");
+            document.body.addEventListener("click", () => audio.play(), { once: true });
         });
     }
+
             confetti({
                 particleCount: 200,   // Number of confetti particles
                 spread: 100,           // Spread of the explosion
@@ -200,7 +201,7 @@ envelope.addEventListener('click', () => {
                 scalar: 1.8,          // Size of confetti
                 colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00'] // Custom colors
             });
-        };
+        }
     if (performance.getEntriesByType("navigation")[0].type === "reload") {
         window.location.href = "../index.html"; // Adjust path if needed
     }

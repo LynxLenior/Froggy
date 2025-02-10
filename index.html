@@ -196,6 +196,15 @@ document.querySelector(".hover-btn2").addEventListener("mouseleave", function() 
     document.querySelector(".pictures").style.backgroundImage = "url('https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/CatRoseeeeeeee.jpg')";
 });
 
+document.querySelector(".hover-btn").addEventListener("click", function() {
+    sessionStorage.setItem('redirected', 'true'); // Store flag before redirecting
+    window.location.href = "Pages/YesPage.html"; // Redirect
+});
+
+document.querySelector(".hover-btn2").addEventListener("click", function() {
+    window.location.href = "Pages/NoPage.html";
+});
+
 // 🍃 Generate More Falling Leaves 🍃
 document.addEventListener("DOMContentLoaded", function () {
     const leafContainer = document.querySelector(".falling-leaves");
