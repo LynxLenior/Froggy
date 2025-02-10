@@ -17,6 +17,8 @@ body{
   padding: 0;
   box-sizing: border-box;
   background-image: url("https://raw.githubusercontent.com/LynxLenior/Froggy/main/Image/YesPagesr.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,6 +183,14 @@ envelope.addEventListener('click', () => {
 });
         // Trigger confetti when the page loads
         window.onload = function() {
+            if (sessionStorage.getItem('redirected') === 'true') {
+        document.addEventListener('click', function playSound() {
+            audio.play().catch(error => {
+                console.log("Autoplay blocked. Sound will play on user interaction.");
+            });
+            document.removeEventListener('click', playSound);
+        });
+    }
             confetti({
                 particleCount: 200,   // Number of confetti particles
                 spread: 100,           // Spread of the explosion
